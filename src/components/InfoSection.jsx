@@ -44,8 +44,17 @@ const InfoSection = () => {
                 <div className="absolute w-[600px] h-[600px] bg-primary-yellow rounded-full"></div>
             </div>
 
-            {/* Peek-a-boo Mascot */}
-            <img src="/mascot.png" className="absolute top-10 right-10 w-32 md:w-48 transform -rotate-12 z-20 opacity-20 md:opacity-100" />
+            {/* Revolving Mascot */}
+            <div className="absolute inset-0 z-10 flex justify-center items-center pointer-events-none transform translate-y-20 scale-150">
+                {/* Orbit Container - Spinning */}
+                <div className="absolute w-[1000px] h-[1000px] animate-[spin_20s_linear_infinite]">
+                    {/* Car positioned on the edge (radius of red circle which is 1000px width -> 500px radius) */}
+                    {/* We position it at the top center of the spinning circle */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 md:w-32 transform">
+                        <img src="/mascot.png" className="w-full drop-shadow-lg" />
+                    </div>
+                </div>
+            </div>
 
             <div className="relative z-10 px-4 pb-20 pt-40">
                 <div className="text-center mb-20">

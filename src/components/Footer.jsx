@@ -1,30 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const FAQItem = ({ faq }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div
+            className="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+        >
+            <h3 className="font-bold text-lg mb-2 flex justify-between items-center select-none">
+                {faq.q}
+                <span className={`text-primary-yellow text-2xl transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>+</span>
+            </h3>
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <p className="text-gray-300 text-sm leading-relaxed border-t border-white/10 pt-4">
+                    {faq.a}
+                </p>
+            </div>
+        </div>
+    );
+};
 
 const Footer = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
     return (
-        <footer className="bg-primary-navy text-white pt-20 pb-10">
+        <footer className="bg-primary-navy text-white pt-20 pb-10 mt-24">
             <div className="max-w-7xl mx-auto px-4">
-                {/* FAQ Section */}
-                <div className="mb-20">
-                    <h2 className="text-4xl font-heading text-primary-yellow uppercase mb-8 text-center">Frequently Asked Questions</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            "How long does a car battery typically last?",
-                            "What are the signs that my car battery needs to be replaced?",
-                            "How can I extend the life of my car battery?",
-                            "What should I do if my car battery dies?",
-                            "How do I know which battery is right for my car?",
-                            "What types of car emergency services do you offer?"
-                        ].map((q, i) => (
-                            <div key={i} className="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer">
-                                <h3 className="font-bold text-lg mb-2 flex justify-between">
-                                    {q}
-                                    <span className="text-primary-yellow">+</span>
-                                </h3>
-                            </div>
-                        ))}
+                {/* FAQ Section - Only on Home Page */}
+                {isHomePage && (
+                    <div className="mb-20">
+                        <h2 className="text-4xl font-heading text-primary-yellow uppercase mb-8 text-center">Frequently Asked Questions</h2>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {[
+                                {
+                                    q: "How long does a car battery typically last?",
+                                    a: "On average, a car battery lasts between 3 to 5 years. However, weather conditions, driving habits, and maintenance can affect the battery’s lifespan."
+                                },
+                                {
+                                    q: "What are the signs that my car battery needs to be replaced?",
+                                    a: "Common signs include slow engine cranking, dim headlights, electrical issues, and a dashboard battery warning light. If your car struggles to start, it’s time to check the battery."
+                                },
+                                {
+                                    q: "How can I extend the life of my car battery?",
+                                    a: "To extend your battery’s life, keep it clean, ensure it’s securely mounted, avoid frequent short trips, and check the charging system regularly. Regular inspections and maintenance can also help."
+                                },
+                                {
+                                    q: "What should I do if my car battery dies?",
+                                    a: "If your battery dies, you can jump-start it using jumper cables and another vehicle with a fully charged car battery. If the problem persists, it may be time to replace the battery."
+                                },
+                                {
+                                    q: "How do I know which battery is right for my car?",
+                                    a: "The correct battery for your vehicle depends on factors like battery size, cold cranking amps (CCA), and reserve capacity (RC). It’s best to consult your vehicle’s manual or speak to a professional for guidance."
+                                },
+                                {
+                                    q: "What types of car emergency services do you offer?",
+                                    a: "Our emergency services include roadside assistance, towing, jump-starts, flat tire changes, lockout assistance, and emergency fuel delivery."
+                                }
+                            ].map((faq, i) => (
+                                <FAQItem key={i} faq={faq} />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* Contact Form & Info Grid */}
                 <div className="grid md:grid-cols-2 gap-16 mb-20 border-t border-white/20 pt-16">
