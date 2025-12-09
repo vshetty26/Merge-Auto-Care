@@ -96,16 +96,16 @@ const CarSuspensionWork = () => {
     const radius = 260; // wide circle
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-primary-navy to-black text-white relative overflow-hidden flex flex-col items-center justify-center py-20 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-primary-bg via-secondary-bg to-primary-bg text-clean-white relative overflow-hidden flex flex-col items-center justify-center py-20 px-4">
 
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute w-[800px] h-[800px] bg-primary-red/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute w-[800px] h-[800px] bg-soft-highlight/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
             </div>
 
             <div className="text-center mb-10 z-10 relative">
-                <h1 className="text-4xl md:text-5xl font-heading text-white uppercase mb-2 drop-shadow-lg">Suspension & Steering</h1>
-                <p className="text-gray-400">Hover over the nodes to explore services</p>
+                <h1 className="text-4xl md:text-5xl font-heading text-clean-white uppercase mb-2 drop-shadow-lg">Suspension & Steering</h1>
+                <p className="text-text-secondary">Hover over the nodes to explore services</p>
             </div>
 
             <div className="relative w-full max-w-[800px] h-[600px] md:h-[800px] flex items-center justify-center">
@@ -125,10 +125,10 @@ const CarSuspensionWork = () => {
 
                     {/* Inner Content Display (Overlaid on Tyre or Center) */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="text-center bg-black/60 backdrop-blur-sm p-4 rounded-full w-48 h-48 flex flex-col items-center justify-center border border-white/10 shadow-2xl">
-                            <h3 className="text-primary-yellow font-bold text-sm tracking-wider uppercase mb-1">Current Selection</h3>
-                            <p className="font-heading text-xl md:text-2xl leading-tight mb-2">{activeService.title}</p>
-                            <p className="text-primary-red font-extrabold text-2xl">{activeService.price}</p>
+                        <div className="text-center bg-secondary-bg/60 backdrop-blur-sm p-4 rounded-full w-48 h-48 flex flex-col items-center justify-center border border-white/10 shadow-2xl">
+                            <h3 className="text-soft-highlight font-bold text-sm tracking-wider uppercase mb-1">Current Selection</h3>
+                            <p className="font-heading text-xl md:text-2xl leading-tight mb-2 text-clean-white">{activeService.title}</p>
+                            <p className="text-clean-white font-extrabold text-2xl">{activeService.price}</p>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ const CarSuspensionWork = () => {
                                 >
                                     <div className={`
                                         flex flex-col items-center justify-center w-28 h-28 rounded-full border-2 transition-all duration-300 cursor-pointer backdrop-blur-md shadow-lg
-                                        ${isActive ? 'bg-primary-red border-primary-yellow scale-110 shadow-red-500/50' : 'bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/50'}
+                                        ${isActive ? 'bg-soft-highlight border-clean-white scale-110 shadow-soft-highlight/50 text-primary-bg font-bold' : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30 text-text-secondary'}
                                      `}>
                                         <span className="text-2xl mb-1">🔧</span>
                                         <span className="text-[10px] uppercase font-bold text-center px-2 leading-tight">
@@ -179,12 +179,12 @@ const CarSuspensionWork = () => {
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-10 text-left shadow-2xl">
                     <div className="flex flex-col md:flex-row justify-between items-start mb-6 border-b border-white/10 pb-6">
                         <div>
-                            <h2 className="text-3xl font-bold font-heading mb-2 text-white">{activeService.title}</h2>
-                            <p className="text-gray-300 italic text-sm">{activeService.recommendation}</p>
+                            <h2 className="text-3xl font-bold font-heading mb-2 text-clean-white">{activeService.title}</h2>
+                            <p className="text-text-secondary italic text-sm">{activeService.recommendation}</p>
                         </div>
                         <div className="mt-4 md:mt-0 text-right">
-                            <div className="text-4xl font-extrabold text-primary-yellow">{activeService.price}</div>
-                            <div className="text-sm text-gray-400 mt-1">
+                            <div className="text-4xl font-extrabold text-soft-highlight">{activeService.price}</div>
+                            <div className="text-sm text-text-secondary mt-1">
                                 {activeService.time} | {activeService.warranty}
                             </div>
                         </div>
@@ -192,14 +192,14 @@ const CarSuspensionWork = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         {activeService.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-center text-gray-200">
-                                <span className="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs mr-3">✓</span>
+                            <div key={idx} className="flex items-center text-text-secondary">
+                                <span className="w-6 h-6 rounded-full bg-soft-highlight/20 text-soft-highlight flex items-center justify-center text-xs mr-3">✓</span>
                                 {feature}
                             </div>
                         ))}
                     </div>
 
-                    <button className="w-full py-4 rounded-xl font-bold uppercase tracking-widest bg-gradient-to-r from-primary-red to-red-600 hover:from-red-600 hover:to-primary-red transition-all shadow-lg text-white">
+                    <button className="w-full py-4 rounded-xl font-bold uppercase tracking-widest bg-clean-white text-primary-bg hover:bg-soft-highlight hover:text-white transition-all shadow-lg">
                         Select Your Car
                     </button>
                 </div>
@@ -210,7 +210,7 @@ const CarSuspensionWork = () => {
                         <div
                             key={idx}
                             onClick={() => setActiveIndex(idx)}
-                            className={`w-2 h-2 rounded-full transition-colors ${idx === activeIndex ? 'bg-primary-yellow' : 'bg-gray-600'}`}
+                            className={`w-2 h-2 rounded-full transition-colors ${idx === activeIndex ? 'bg-soft-highlight' : 'bg-white/20'}`}
                         />
                     ))}
                 </div>

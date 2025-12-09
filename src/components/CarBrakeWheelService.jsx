@@ -163,13 +163,13 @@ const CarBrakeWheelService = () => {
     ];
 
     return (
-        <div className="bg-white min-h-screen py-20 px-4">
+        <div className="bg-primary-bg min-h-screen py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <p className="text-primary-red font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Car Service</p>
-                    <h1 className="text-5xl md:text-6xl font-heading text-primary-navy uppercase mb-6 animate-fade-in-up delay-100">Car Brake & Wheel Maintenance</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    <p className="text-soft-highlight font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Car Service</p>
+                    <h1 className="text-5xl md:text-6xl font-heading text-clean-white uppercase mb-6 animate-fade-in-up delay-100">Car Brake & Wheel Maintenance</h1>
+                    <p className="text-text-secondary max-w-2xl mx-auto animate-fade-in-up delay-200">
                         Expert solutions for your wheels and brakes to ensure a safe and smooth ride.
                     </p>
                 </div>
@@ -179,7 +179,7 @@ const CarBrakeWheelService = () => {
                     {brakeWheelServices.map((service, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col md:flex-row bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 group ${service.color}`}
+                            className={`flex flex-col md:flex-row bg-secondary-bg rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/10 group ${service.color}`}
                         >
                             {/* Image Section (Left 30%) */}
                             <div className="w-full md:w-1/3 h-64 md:h-auto relative overflow-hidden">
@@ -188,7 +188,7 @@ const CarBrakeWheelService = () => {
                                     alt={service.title}
                                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-primary-navy bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-primary-bg bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold shadow-md">
                                     {service.interval}
                                 </div>
@@ -198,19 +198,19 @@ const CarBrakeWheelService = () => {
                             <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-between relative">
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-primary-navy font-heading uppercase group-hover:text-primary-red transition-colors">{service.title}</h3>
-                                        <div className="flex items-center text-sm text-gray-500 mt-1">
+                                        <h3 className="text-2xl font-bold text-clean-white font-heading uppercase group-hover:text-soft-highlight transition-colors">{service.title}</h3>
+                                        <div className="flex items-center text-sm text-text-secondary mt-1">
                                             <span className="mr-2">⏱️</span> {service.time}
                                         </div>
                                     </div>
-                                    <div className="text-3xl font-extrabold text-primary-navy font-heading">{service.price}</div>
+                                    <div className="text-3xl font-extrabold text-clean-white font-heading">{service.price}</div>
                                 </div>
 
-                                <hr className="border-gray-100 mb-4" />
+                                <hr className="border-white/10 mb-4" />
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-6">
                                     {service.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center text-sm text-gray-700">
+                                        <div key={idx} className="flex items-center text-sm text-text-secondary">
                                             <span className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2 flex-shrink-0 group-hover:bg-primary-red transition-colors"></span>
                                             {feature}
                                         </div>
@@ -218,7 +218,7 @@ const CarBrakeWheelService = () => {
                                 </div>
 
                                 <div className="flex items-center justify-end">
-                                    <button className="bg-primary-navy text-white px-8 py-3 rounded-lg font-bold uppercase text-sm tracking-wider hover:bg-primary-red transition-colors shadow-md transform active:scale-95">
+                                    <button className="bg-clean-white text-primary-bg px-8 py-3 rounded-lg font-bold uppercase text-sm tracking-wider hover:bg-gray-200 transition-colors shadow-md transform active:scale-95">
                                         Select Your Car
                                     </button>
                                 </div>

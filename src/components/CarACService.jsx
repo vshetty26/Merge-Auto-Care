@@ -40,19 +40,19 @@ const CarACService = () => {
                 "Dashboard Removing fitting",
                 "3 more specifications"
             ],
-            color: "from-primary-red to-red-600",
-            shadow: "shadow-red-200"
+            color: "from-soft-highlight to-gray-500",
+            shadow: "shadow-gray-800"
         }
     ];
 
     return (
-        <div className="bg-gray-50 min-h-screen py-20 px-4">
+        <div className="bg-primary-bg min-h-screen py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <p className="text-primary-red font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Car Service</p>
-                    <h1 className="text-5xl md:text-6xl font-heading text-primary-navy uppercase mb-6 animate-fade-in-up delay-100">Car AC Service & Repair</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    <p className="text-soft-highlight font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Car Service</p>
+                    <h1 className="text-5xl md:text-6xl font-heading text-clean-white uppercase mb-6 animate-fade-in-up delay-100">Car AC Service & Repair</h1>
+                    <p className="text-text-secondary max-w-2xl mx-auto animate-fade-in-up delay-200">
                         Stay cool and comfortable with our expert AC repair and maintenance packages.
                     </p>
                 </div>
@@ -77,7 +77,7 @@ const CarACService = () => {
                             {/* Default Content (Visible initially) */}
                             <div className="absolute top-0 left-0 w-full p-8 z-10 flex justify-between items-start">
                                 {service.recommended && (
-                                    <span className="bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg animate-pulse">
+                                    <span className="bg-soft-highlight text-primary-bg text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg animate-pulse">
                                         Recommended
                                     </span>
                                 )}
@@ -85,29 +85,29 @@ const CarACService = () => {
 
                             <div className="absolute bottom-0 left-0 w-full p-8 z-10 transform transition-transform duration-500 group-hover:-translate-y-20">
                                 <h3 className="text-3xl font-heading text-white mb-2 shadow-sm drop-shadow-md">{service.title}</h3>
-                                <div className="text-4xl font-extrabold text-primary-yellow mb-2 drop-shadow-md">{service.price}</div>
+                                <div className="text-4xl font-extrabold text-soft-highlight mb-2 drop-shadow-md">{service.price}</div>
                                 <div className="text-white text-sm opacity-90 mb-4 flex items-center">
                                     <span className="mr-2">⏱️ {service.time}</span>
                                 </div>
                             </div>
 
                             {/* Reveal Content (Slides up on hover) */}
-                            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-95 backdrop-blur-md p-8 transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-20 rounded-t-3xl">
+                            <div className="absolute bottom-0 left-0 w-full bg-secondary-bg bg-opacity-95 backdrop-blur-md p-8 transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-20 rounded-t-3xl">
                                 <div className="flex flex-col h-full">
-                                    <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 text-center">Package Details</div>
+                                    <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 text-center">Package Details</div>
 
                                     <div className="space-y-3 mb-6">
-                                        <div className="flex items-start text-xs text-gray-700">
+                                        <div className="flex items-start text-xs text-text-secondary">
                                             <span className="mr-2 font-bold">🛡️ Warranty:</span> {service.warranty}
                                         </div>
-                                        <div className="flex items-start text-xs text-gray-700">
+                                        <div className="flex items-start text-xs text-text-secondary">
                                             <span className="mr-2 font-bold">📅 Frequency:</span> {service.frequency}
                                         </div>
                                     </div>
 
                                     <ul className="space-y-2 mb-6">
                                         {service.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center text-sm text-primary-navy font-medium">
+                                            <li key={idx} className="flex items-center text-sm text-clean-white font-medium">
                                                 <span className={`w-2 h-2 rounded-full mr-3 bg-gradient-to-br ${service.color}`}></span>
                                                 {feature}
                                             </li>

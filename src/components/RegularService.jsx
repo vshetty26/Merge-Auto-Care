@@ -22,8 +22,8 @@ const RegularService = () => {
                 "Coolant Top Up upto (200 ml)",
                 "4 more specifications"
             ],
-            color: "border-primary-yellow",
-            btnColor: "bg-primary-yellow text-primary-navy"
+            color: "border-neutral-accent",
+            btnColor: "bg-neutral-accent text-clean-white"
         },
         {
             title: "Standard Service",
@@ -41,8 +41,8 @@ const RegularService = () => {
                 "Wiper Fluid Top Up",
                 "9 more specifications"
             ],
-            color: "border-primary-red",
-            btnColor: "bg-primary-red text-white"
+            color: "border-soft-highlight",
+            btnColor: "bg-soft-highlight text-primary-bg"
         },
         {
             title: "Comprehensive Service",
@@ -59,19 +59,19 @@ const RegularService = () => {
                 "Fuel Filter Check",
                 "9 more specifications"
             ],
-            color: "border-primary-navy",
-            btnColor: "bg-primary-navy text-white"
+            color: "border-clean-white",
+            btnColor: "bg-clean-white text-primary-bg"
         }
     ];
 
     return (
-        <div className="bg-gray-50 min-h-screen py-20 px-4">
+        <div className="bg-primary-bg min-h-screen py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <p className="text-primary-red font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Scheduled Packages</p>
-                    <h1 className="text-5xl md:text-6xl font-heading text-primary-navy uppercase mb-6 animate-fade-in-up delay-100">Regular Car Service</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    <p className="text-soft-highlight font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Scheduled Packages</p>
+                    <h1 className="text-5xl md:text-6xl font-heading text-clean-white uppercase mb-6 animate-fade-in-up delay-100">Regular Car Service</h1>
+                    <p className="text-text-secondary max-w-2xl mx-auto animate-fade-in-up delay-200">
                         Choose from our range of scheduled service packages designed to keep your car running smoothly and efficiently.
                     </p>
                 </div>
@@ -81,10 +81,10 @@ const RegularService = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className={`bg-white rounded-2xl shadow-lg border-t-8 ${service.color} overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 flex flex-col group`}
+                            className={`bg-secondary-bg rounded-2xl shadow-lg border-t-8 ${service.color} overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 flex flex-col group`}
                         >
                             {service.recommended && (
-                                <div className="absolute top-0 right-0 bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider z-10 shadow-md">
+                                <div className="absolute top-0 right-0 bg-soft-highlight text-primary-bg text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider z-10 shadow-md">
                                     Recommended
                                 </div>
                             )}
@@ -96,25 +96,25 @@ const RegularService = () => {
                             </div>
 
                             <div className="p-8 flex-col flex flex-grow">
-                                <h3 className="text-2xl font-bold text-primary-navy mb-2 font-heading tracking-wide group-hover:text-primary-red transition-colors">{service.title}</h3>
-                                <div className="text-4xl font-extrabold text-primary-navy mb-6">{service.price}</div>
+                                <h3 className="text-2xl font-bold text-clean-white mb-2 font-heading tracking-wide group-hover:text-soft-highlight transition-colors">{service.title}</h3>
+                                <div className="text-4xl font-extrabold text-clean-white mb-6">{service.price}</div>
 
                                 <div className="space-y-4 mb-8 flex-grow">
-                                    <div className="flex items-start text-sm text-gray-600">
+                                    <div className="flex items-start text-sm text-text-secondary">
                                         <span className="mr-2 text-lg">⏱️</span> <span className="pt-0.5">{service.time}</span>
                                     </div>
-                                    <div className="flex items-start text-sm text-gray-600">
+                                    <div className="flex items-start text-sm text-text-secondary">
                                         <span className="mr-2 text-lg">🛡️</span> <span className="pt-0.5">{service.warranty}</span>
                                     </div>
-                                    <div className="flex items-start text-sm text-gray-600">
+                                    <div className="flex items-start text-sm text-text-secondary">
                                         <span className="mr-2 text-lg">📅</span> <span className="pt-0.5">{service.frequency}</span>
                                     </div>
 
-                                    <hr className="border-gray-100 my-4" />
+                                    <hr className="border-white/10 my-4" />
 
                                     <ul className="space-y-3">
                                         {service.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center text-sm text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                                            <li key={idx} className="flex items-center text-sm text-text-secondary transition-transform duration-300 hover:translate-x-1">
                                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3 flex-shrink-0"></span>
                                                 {feature}
                                             </li>

@@ -27,12 +27,12 @@ const Footer = () => {
     const isHomePage = location.pathname === '/';
 
     return (
-        <footer className="bg-primary-navy text-white pt-20 pb-10 mt-24">
+        <footer className="bg-secondary-bg text-text-secondary pt-20 pb-10 mt-24">
             <div className="max-w-7xl mx-auto px-4">
                 {/* FAQ Section - Only on Home Page */}
                 {isHomePage && (
                     <div className="mb-20">
-                        <h2 className="text-4xl font-heading text-primary-yellow uppercase mb-8 text-center">Frequently Asked Questions</h2>
+                        <h2 className="text-4xl font-heading text-clean-white uppercase mb-8 text-center">Frequently Asked Questions</h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             {[
                                 {
@@ -70,26 +70,26 @@ const Footer = () => {
                 <div className="grid md:grid-cols-2 gap-16 mb-20 border-t border-white/20 pt-16">
                     {/* Contact Form */}
                     <div>
-                        <h3 className="text-3xl font-heading text-white uppercase mb-6">Have Questions? Get In Touch!</h3>
+                        <h3 className="text-3xl font-heading text-clean-white uppercase mb-6">Have Questions? Get In Touch!</h3>
                         <form className="space-y-4">
-                            <input type="text" placeholder="Enter Your Name" className="w-full p-4 bg-white text-primary-navy rounded" />
-                            <input type="email" placeholder="Enter Your Email" className="w-full p-4 bg-white text-primary-navy rounded" />
-                            <select className="w-full p-4 bg-white text-primary-navy rounded">
+                            <input type="text" placeholder="Enter Your Name" className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
+                            <input type="email" placeholder="Enter Your Email" className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
+                            <select className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none">
                                 <option>Select Location</option>
                                 <option>Gurugram</option>
                                 <option>Delhi</option>
                                 <option>Noida</option>
                             </select>
-                            <input type="tel" placeholder="Enter Your Phone Number" className="w-full p-4 bg-white text-primary-navy rounded" />
+                            <input type="tel" placeholder="Enter Your Phone Number" className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
                             <div className="flex items-center space-x-2">
-                                <span className="font-bold">What is 6 - 5?</span>
-                                <input type="text" placeholder="Answer" className="w-20 p-2 bg-white text-primary-navy rounded" />
+                                <span className="font-bold text-clean-white">What is 6 - 5?</span>
+                                <input type="text" placeholder="Answer" className="w-20 p-2 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
                             </div>
-                            <label className="flex items-start space-x-2 text-sm text-gray-300">
-                                <input type="checkbox" className="mt-1" />
+                            <label className="flex items-start space-x-2 text-sm text-gray-400">
+                                <input type="checkbox" className="mt-1 accent-soft-highlight" />
                                 <span>I agree to receive calls, e-mail, WhatsApp messages, and SMS from ACR.</span>
                             </label>
-                            <button className="bg-primary-red text-white font-bold py-4 px-8 rounded w-full hover:bg-red-700 transition uppercase">
+                            <button className="bg-clean-white text-primary-bg font-bold py-4 px-8 rounded w-full hover:bg-gray-200 transition uppercase">
                                 Submit
                             </button>
                         </form>
@@ -97,26 +97,26 @@ const Footer = () => {
 
                     {/* Contact Details */}
                     <div>
-                        <h3 className="text-3xl font-heading text-white uppercase mb-6">Contact Us</h3>
-                        <div className="space-y-6 text-lg">
+                        <h3 className="text-3xl font-heading text-clean-white uppercase mb-6">Contact Us</h3>
+                        <div className="space-y-6 text-lg text-text-secondary">
                             <p>
-                                <strong className="block text-primary-yellow">Adddress</strong>
+                                <strong className="block text-clean-white">Adddress</strong>
                                 Unit-1 Plot No 29 & 30, Sector 34, Gurugram, 122001
                             </p>
                             <p>
-                                <strong className="block text-primary-yellow">Phone</strong>
+                                <strong className="block text-clean-white">Phone</strong>
                                 9810446692 / 9870400861
                             </p>
                             <p>
-                                <strong className="block text-primary-yellow">Email</strong>
+                                <strong className="block text-clean-white">Email</strong>
                                 support@autocarrepair.in
                             </p>
                             <div className="pt-6">
-                                <strong className="block text-primary-yellow mb-4">Follow Us</strong>
+                                <strong className="block text-clean-white mb-4">Follow Us</strong>
                                 <div className="flex space-x-4">
                                     {/* Social Placeholders */}
                                     {['FB', 'TW', 'IG', 'LI', 'YT', 'WA'].map(social => (
-                                        <div key={social} className="w-10 h-10 bg-white text-primary-navy rounded-full flex items-center justify-center font-bold text-xs cursor-pointer hover:bg-primary-yellow transition">
+                                        <div key={social} className="w-10 h-10 bg-primary-bg text-clean-white rounded-full flex items-center justify-center font-bold text-xs cursor-pointer hover:bg-clean-white hover:text-primary-bg transition">
                                             {social}
                                         </div>
                                     ))}
@@ -162,7 +162,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <img src="/acr_logo.png" alt="ACR" className="h-20 mb-4 bg-white p-2 rounded" />
+                        <img src="/acr_logo.png" alt="ACR" className="h-20 mb-4 bg-primary-bg p-2 rounded brightness-0 invert" />
                         <p className="mb-4">Auto Car Repair (Powered by Autogine Services) is a leading network of multi-brand car service workshops.</p>
                         <p>© 2025 by Autoginie Services Private Limited.</p>
                     </div>

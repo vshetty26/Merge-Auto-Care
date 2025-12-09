@@ -140,7 +140,7 @@ const CarCareDetailing = () => {
     const currentService = services[currentIndex];
 
     return (
-        <div className="relative h-screen w-full bg-gray-900 overflow-hidden">
+        <div className="relative h-screen w-full bg-primary-bg overflow-hidden">
             {/* Background Image Layer */}
             <div className="absolute inset-0 transition-opacity duration-700 ease-in-out">
                 <div key={currentIndex} className="absolute inset-0 animate-fade-in-slow">
@@ -149,7 +149,7 @@ const CarCareDetailing = () => {
                         alt={currentService.title}
                         className="w-full h-full object-cover opacity-60"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-primary-bg/40 to-transparent"></div>
                 </div>
             </div>
 
@@ -172,29 +172,29 @@ const CarCareDetailing = () => {
             {/* Content Container */}
             <div className="relative z-20 h-full flex flex-col items-center justify-center px-4">
                 <div key={currentIndex} className="max-w-4xl text-center animate-slide-up">
-                    <h2 className="text-sm md:text-md uppercase tracking-[0.3em] text-primary-yellow mb-4 font-bold">
+                    <h2 className="text-sm md:text-md uppercase tracking-[0.3em] text-soft-highlight mb-4 font-bold">
                         Detailed Perfection
                     </h2>
-                    <h1 className="text-5xl md:text-7xl font-heading text-white mb-8 drop-shadow-xl">
+                    <h1 className="text-5xl md:text-7xl font-heading text-clean-white mb-8 drop-shadow-xl">
                         {currentService.title}
                     </h1>
 
                     {/* Glass Card for Details */}
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto shadow-2xl">
+                    <div className="bg-secondary-bg/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto shadow-2xl">
                         <div className="flex flex-col md:flex-row justify-between items-center mb-6 border-b border-white/10 pb-6">
                             <div className="text-center md:text-left mb-4 md:mb-0">
-                                <div className="text-3xl font-bold text-primary-red">{currentService.price}</div>
-                                <div className="text-gray-300 text-sm mt-1">Estimating Time: {currentService.time}</div>
+                                <div className="text-3xl font-bold text-clean-white">{currentService.price}</div>
+                                <div className="text-text-secondary text-sm mt-1">Estimating Time: {currentService.time}</div>
                             </div>
-                            <button className="px-8 py-3 bg-white text-gray-900 font-bold rounded-full hover:bg-primary-yellow hover:text-primary-navy transition-colors uppercase tracking-wider text-sm shadow-lg">
+                            <button className="px-8 py-3 bg-clean-white text-primary-bg font-bold rounded-full hover:bg-soft-highlight hover:text-primary-bg transition-colors uppercase tracking-wider text-sm shadow-lg">
                                 Select Your Car
                             </button>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                             {currentService.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-center text-gray-200 text-sm">
-                                    <span className="w-1.5 h-1.5 bg-primary-yellow rounded-full mr-3 flex-shrink-0"></span>
+                                <div key={idx} className="flex items-center text-text-secondary text-sm">
+                                    <span className="w-1.5 h-1.5 bg-soft-highlight rounded-full mr-3 flex-shrink-0"></span>
                                     {feature}
                                 </div>
                             ))}
@@ -208,7 +208,7 @@ const CarCareDetailing = () => {
                 {services.map((_, idx) => (
                     <div
                         key={idx}
-                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-primary-yellow h-8' : 'bg-white/50 hover:bg-white'}`}
+                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-soft-highlight h-8' : 'bg-white/50 hover:bg-white'}`}
                     />
                 ))}
             </div>

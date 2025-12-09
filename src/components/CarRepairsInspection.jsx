@@ -56,22 +56,22 @@ const CarRepairsInspection = () => {
     const filteredServices = allServices.filter(s => s.category === activeCategory);
 
     return (
-        <div className="min-h-screen bg-black text-green-500 font-mono relative overflow-hidden flex flex-col md:flex-row">
+        <div className="min-h-screen bg-primary-bg text-soft-highlight font-mono relative overflow-hidden flex flex-col md:flex-row">
 
             {/* Grid Overlay */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-                style={{ backgroundImage: 'linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+                style={{ backgroundImage: 'linear-gradient(rgba(143, 160, 174, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 160, 174, 0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
             </div>
 
             {/* Left Panel: Diagnostic Scanner Visual (40%) */}
-            <div className="w-full md:w-2/5 p-4 md:p-8 flex flex-col items-center justify-center relative border-r border-green-900/50 bg-black/80 backdrop-blur-sm z-10">
+            <div className="w-full md:w-2/5 p-4 md:p-8 flex flex-col items-center justify-center relative border-r border-white/10 bg-secondary-bg/80 backdrop-blur-sm z-10">
                 <div className="w-full max-w-md relative group">
                     {/* Scanner Frame */}
-                    <div className="absolute inset-0 border-2 border-green-500/30 rounded-lg"></div>
-                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-green-500"></div>
-                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-right-2 border-green-500 border-r-2"></div>
-                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-green-500"></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-right-2 border-green-500 border-r-2"></div>
+                    <div className="absolute inset-0 border-2 border-soft-highlight/30 rounded-lg"></div>
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-soft-highlight"></div>
+                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-right-2 border-soft-highlight border-r-2"></div>
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-soft-highlight"></div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-right-2 border-soft-highlight border-r-2"></div>
 
                     {/* Car Image with Blueprint Filter */}
                     <div className="relative overflow-hidden rounded-lg">
@@ -81,12 +81,12 @@ const CarRepairsInspection = () => {
                             className="w-full h-auto filter grayscale sepia hue-rotate-[90deg] saturate-[300%] opacity-80"
                         />
                         {/* Scanning Line Animation */}
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-green-400 shadow-[0_0_15px_rgba(74,222,128,1)] animate-scan"></div>
+                        <div className="absolute top-0 left-0 w-full h-[2px] bg-soft-highlight shadow-[0_0_15px_rgba(143,160,174,1)] animate-scan"></div>
                     </div>
 
                     {/* Status Text */}
                     <div className="mt-4 flex justify-between text-xs uppercase tracking-widest">
-                        <span>System Status: <span className="text-white animate-pulse">ONLINE</span></span>
+                        <span>System Status: <span className="text-clean-white animate-pulse">ONLINE</span></span>
                         <span>Scanning...</span>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ const CarRepairsInspection = () => {
                         <button
                             key={cat.id}
                             onClick={() => setActiveCategory(cat.id)}
-                            className={`p-3 text-xs md:text-sm border border-green-500/50 rounded hover:bg-green-500/20 transition-all flex flex-col items-center gap-2 ${activeCategory === cat.id ? 'bg-green-500/20 text-white shadow-[0_0_10px_rgba(74,222,128,0.3)]' : 'text-gray-400'}`}
+                            className={`p-3 text-xs md:text-sm border border-white/10 rounded hover:bg-soft-highlight/20 transition-all flex flex-col items-center gap-2 ${activeCategory === cat.id ? 'bg-soft-highlight/20 text-clean-white shadow-[0_0_10px_rgba(143,160,174,0.3)]' : 'text-text-secondary'}`}
                         >
                             <span className="text-2xl">{cat.icon}</span>
                             <span>{cat.name}</span>
@@ -108,8 +108,8 @@ const CarRepairsInspection = () => {
 
             {/* Right Panel: Diagnostic Log (Services List) (60%) */}
             <div className="w-full md:w-3/5 p-4 md:p-8 relative z-10 overflow-y-auto max-h-screen">
-                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white border-b border-green-900 pb-4 uppercase tracking-wider">
-                    <span className="text-green-500 mr-2">>>></span>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-clean-white border-b border-white/10 pb-4 uppercase tracking-wider">
+                    <span className="text-soft-highlight mr-2">{">>>"}</span>
                     Diagnostic Report: {categories.find(c => c.id === activeCategory)?.name}
                 </h2>
 
@@ -117,29 +117,29 @@ const CarRepairsInspection = () => {
                     {filteredServices.map((service, idx) => (
                         <div
                             key={idx}
-                            className="border border-green-900 bg-green-900/5 hover:bg-green-900/10 rounded-lg p-4 transition-all group hover:border-green-500/50 relative overflow-hidden"
+                            className="border border-white/10 bg-secondary-bg hover:bg-white/5 rounded-lg p-4 transition-all group hover:border-soft-highlight/50 relative overflow-hidden"
                             onMouseEnter={() => setScannedService(service)}
                         >
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-green-300 group-hover:text-green-100">{service.title}</h3>
-                                <span className="text-white font-bold bg-green-900/40 px-2 py-1 rounded text-sm">{service.price}</span>
+                                <h3 className="text-lg font-bold text-soft-highlight group-hover:text-clean-white">{service.title}</h3>
+                                <span className="text-clean-white font-bold bg-primary-bg/50 px-2 py-1 rounded text-sm">{service.price}</span>
                             </div>
 
-                            <div className="text-xs text-gray-500 mb-3 font-semibold uppercase">
+                            <div className="text-xs text-text-secondary mb-3 font-semibold uppercase">
                                 Est. Repair Time: {service.time}
                             </div>
 
-                            <div className="grid grid-cols-2 gap-2 text-xs text-gray-400 font-mono">
+                            <div className="grid grid-cols-2 gap-2 text-xs text-text-secondary font-mono">
                                 {service.check.slice(0, 4).map((item, i) => (
                                     <div key={i} className="flex items-center">
-                                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                                        <span className="w-1.5 h-1.5 bg-soft-highlight rounded-full mr-2"></span>
                                         {item}
                                     </div>
                                 ))}
                                 {service.check.length > 4 && <div>...and more</div>}
                             </div>
 
-                            <button className="mt-4 w-full py-2 border border-green-500/30 text-green-400 uppercase text-xs tracking-widest hover:bg-green-500 hover:text-black transition-colors">
+                            <button className="mt-4 w-full py-2 border border-soft-highlight/30 text-soft-highlight uppercase text-xs tracking-widest hover:bg-soft-highlight hover:text-primary-bg transition-colors">
                                 Initiate Repair Protocol
                             </button>
                         </div>

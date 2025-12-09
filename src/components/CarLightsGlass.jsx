@@ -147,14 +147,14 @@ const CarLightsGlass = () => {
     const activeService = services.find(s => s.id === activeId) || services[0];
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-primary-bg min-h-screen">
             {/* Split Screen Layout */}
             <div className="flex flex-col lg:flex-row">
 
                 {/* Left Side - Sticky Visuals (40% width on Desktop) */}
-                <div className="lg:w-2/5 h-screen sticky top-0 bg-primary-navy hidden lg:flex flex-col justify-center items-center p-10 overflow-hidden">
+                <div className="lg:w-2/5 h-screen sticky top-0 bg-secondary-bg hidden lg:flex flex-col justify-center items-center p-10 overflow-hidden">
                     {/* Dynamic Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-navy to-black opacity-90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary-bg to-primary-bg opacity-90"></div>
                     <div className="absolute w-96 h-96 bg-primary-red blur-[100px] opacity-20 rounded-full top-0 left-0"></div>
 
                     {/* Active Service Content */}
@@ -167,15 +167,15 @@ const CarLightsGlass = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             <div className="absolute bottom-6 left-6 text-white">
-                                <p className="text-sm font-bold uppercase tracking-widest text-primary-yellow mb-1">Service Details</p>
+                                <p className="text-sm font-bold uppercase tracking-widest text-soft-highlight mb-1">Service Details</p>
                                 <p className="text-xl font-bold">{activeService.time}</p>
                             </div>
                         </div>
 
                         <div className="text-center text-white">
                             <h2 className="text-3xl font-heading mb-4 leading-tight">{activeService.title}</h2>
-                            <p className="text-5xl font-extrabold text-primary-red mb-6">{activeService.price}</p>
-                            <button className="bg-white text-primary-navy px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-primary-yellow transition-colors shadow-lg shadow-yellow-500/20">
+                            <p className="text-5xl font-extrabold text-soft-highlight mb-6">{activeService.price}</p>
+                            <button className="bg-clean-white text-primary-bg px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-soft-highlight transition-colors shadow-lg shadow-yellow-500/20">
                                 Book Now
                             </button>
                         </div>
@@ -183,7 +183,7 @@ const CarLightsGlass = () => {
                 </div>
 
                 {/* Right Side - Scrollable Content (60% width on Desktop) */}
-                <div className="lg:w-3/5 min-h-screen bg-gray-50">
+                <div className="lg:w-3/5 min-h-screen bg-primary-bg">
                     <div className="p-8 md:p-16 max-w-3xl mx-auto">
                         {/* Mobile Header */}
                         <div className="lg:hidden text-center mb-12">
@@ -192,13 +192,13 @@ const CarLightsGlass = () => {
                         </div>
 
                         <div className="hidden lg:block mb-16">
-                            <p className="text-primary-red font-bold tracking-wider mb-2 uppercase">Visibility Essentials</p>
-                            <h1 className="text-5xl font-heading text-primary-navy uppercase mb-6">Car Lights & Glass Work</h1>
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <p className="text-soft-highlight font-bold tracking-wider mb-2 uppercase">Visibility Essentials</p>
+                            <h1 className="text-5xl font-heading text-clean-white uppercase mb-6">Car Lights & Glass Work</h1>
+                            <p className="text-text-secondary text-lg leading-relaxed">
                                 Ensure clear vision and safety with our top-tier glass replacement and lighting solutions.
                                 Scroll down to explore our services.
                             </p>
-                            <div className="w-20 h-1 bg-primary-yellow mt-8"></div>
+                            <div className="w-20 h-1 bg-soft-highlight mt-8"></div>
                         </div>
 
                         <div className="space-y-24 pb-24">
@@ -212,12 +212,12 @@ const CarLightsGlass = () => {
                                     {/* Mobile Image (Visible only on small screens) */}
                                     <div className="lg:hidden mb-6 rounded-2xl overflow-hidden shadow-lg h-60 relative">
                                         <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-                                        <div className="absolute bottom-0 left-0 bg-primary-navy text-white px-4 py-1 rounded-tr-lg font-bold text-sm">
+                                        <div className="absolute bottom-0 left-0 bg-secondary-bg text-clean-white px-4 py-1 rounded-tr-lg font-bold text-sm">
                                             {service.time}
                                         </div>
                                     </div>
 
-                                    <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow relative overflow-hidden">
+                                    <div className="bg-secondary-bg p-8 rounded-3xl shadow-xl border border-white/10 hover:shadow-2xl transition-shadow relative overflow-hidden">
                                         {/* Decorative Number */}
                                         <div className="absolute top-0 right-0 p-6 opacity-5 font-black text-8xl text-primary-navy select-none">
                                             {services.indexOf(service) + 1}
@@ -225,22 +225,22 @@ const CarLightsGlass = () => {
 
                                         <div className="relative z-10">
                                             <div className="flex justify-between items-start mb-6">
-                                                <h3 className="text-2xl md:text-3xl font-bold text-primary-navy font-heading pr-8">{service.title}</h3>
-                                                <div className="text-2xl font-bold text-primary-red">{service.price}</div>
+                                                <h3 className="text-2xl md:text-3xl font-bold text-clean-white font-heading pr-8">{service.title}</h3>
+                                                <div className="text-2xl font-bold text-soft-highlight">{service.price}</div>
                                             </div>
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                                                 {service.features.map((feature, idx) => (
                                                     <div key={idx} className="flex items-start">
-                                                        <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                                                            <span className="text-green-600 text-xs">✓</span>
+                                                        <div className="w-5 h-5 rounded-full bg-green-100/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                                            <span className="text-green-400 text-xs">✓</span>
                                                         </div>
-                                                        <span className="text-gray-600 text-sm font-medium">{feature}</span>
+                                                        <span className="text-text-secondary text-sm font-medium">{feature}</span>
                                                     </div>
                                                 ))}
                                             </div>
 
-                                            <button className="w-full md:w-auto px-6 py-3 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors uppercase tracking-wider text-sm">
+                                            <button className="w-full md:w-auto px-6 py-3 border-2 border-clean-white text-clean-white font-bold rounded-xl hover:bg-clean-white hover:text-primary-bg transition-colors uppercase tracking-wider text-sm">
                                                 Select Your Car
                                             </button>
                                         </div>

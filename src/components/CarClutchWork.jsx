@@ -96,12 +96,12 @@ const CarClutchWork = () => {
     const [activeService, setActiveService] = useState(services[0]);
 
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4">
+        <div className="bg-primary-bg min-h-screen py-10 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <p className="text-primary-red font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Performance & Transmission</p>
-                    <h1 className="text-5xl md:text-6xl font-heading text-primary-navy uppercase mb-6 animate-fade-in-up delay-100">Car Clutch Work</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    <p className="text-soft-highlight font-bold tracking-wider mb-2 uppercase animate-fade-in-up">Performance & Transmission</p>
+                    <h1 className="text-5xl md:text-6xl font-heading text-clean-white uppercase mb-6 animate-fade-in-up delay-100">Car Clutch Work</h1>
+                    <p className="text-text-secondary max-w-2xl mx-auto animate-fade-in-up delay-200">
                         Expert clutch repair and replacement services to ensure smooth shifting and optimal power transmission.
                     </p>
                 </div>
@@ -114,14 +114,14 @@ const CarClutchWork = () => {
                                 key={service.id}
                                 onClick={() => setActiveService(service)}
                                 className={`w-full text-left p-6 rounded-xl transition-all duration-300 border-l-8 shadow-md flex justify-between items-center group ${activeService.id === service.id
-                                        ? 'bg-white border-primary-red transform translate-x-2'
-                                        : 'bg-white/80 border-transparent hover:bg-white hover:border-gray-300'
+                                    ? 'bg-secondary-bg border-soft-highlight transform translate-x-2'
+                                    : 'bg-secondary-bg/80 border-transparent hover:bg-secondary-bg hover:border-text-secondary'
                                     }`}
                             >
-                                <span className={`font-bold text-lg ${activeService.id === service.id ? 'text-primary-red' : 'text-gray-700'}`}>
+                                <span className={`font-bold text-lg ${activeService.id === service.id ? 'text-soft-highlight' : 'text-text-secondary'}`}>
                                     {service.title}
                                 </span>
-                                <span className={`text-xl ${activeService.id === service.id ? 'opacity-100 text-primary-red' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'} transition-all`}>
+                                <span className={`text-xl ${activeService.id === service.id ? 'opacity-100 text-soft-highlight' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'} transition-all`}>
                                     →
                                 </span>
                             </button>
@@ -130,7 +130,7 @@ const CarClutchWork = () => {
 
                     {/* Right Side - Detailed View Area */}
                     <div className="lg:w-2/3">
-                        <div key={activeService.id} className="bg-white rounded-3xl shadow-xl overflow-hidden animate-slide-up relative min-h-[600px] flex flex-col">
+                        <div key={activeService.id} className="bg-secondary-bg rounded-3xl shadow-xl overflow-hidden animate-slide-up relative min-h-[600px] flex flex-col">
                             {/* Image Header */}
                             <div className="h-64 relative overflow-hidden">
                                 <img
@@ -142,13 +142,13 @@ const CarClutchWork = () => {
                                     <div>
                                         <h2 className="text-3xl md:text-4xl text-white font-heading mb-2">{activeService.title}</h2>
                                         {activeService.recommendation && (
-                                            <p className="text-yellow-400 text-sm font-bold uppercase tracking-wider bg-black/50 px-3 py-1 inline-block rounded">
+                                            <p className="text-primary-bg text-sm font-bold uppercase tracking-wider bg-soft-highlight px-3 py-1 inline-block rounded">
                                                 {activeService.recommendation}
                                             </p>
                                         )}
                                     </div>
                                 </div>
-                                <div className="absolute top-6 right-6 bg-white text-primary-navy px-6 py-3 rounded-full font-extrabold text-2xl shadow-lg">
+                                <div className="absolute top-6 right-6 bg-primary-bg text-clean-white px-6 py-3 rounded-full font-extrabold text-2xl shadow-lg border border-white/10">
                                     {activeService.price}
                                 </div>
                             </div>
@@ -157,29 +157,29 @@ const CarClutchWork = () => {
                             <div className="p-8 md:p-10 flex-grow flex flex-col">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                                     <div className="space-y-4">
-                                        <h3 className="text-lg font-bold text-gray-800 uppercase tracking-wide border-b border-gray-100 pb-2">Service Overview</h3>
-                                        <div className="flex items-center text-gray-600">
+                                        <h3 className="text-lg font-bold text-clean-white uppercase tracking-wide border-b border-white/10 pb-2">Service Overview</h3>
+                                        <div className="flex items-center text-text-secondary">
                                             <span className="mr-3 text-2xl">⏱️</span>
                                             <div>
-                                                <div className="font-bold text-gray-800">Time Required</div>
+                                                <div className="font-bold text-clean-white">Time Required</div>
                                                 <div className="text-sm">{activeService.time}</div>
                                             </div>
                                         </div>
-                                        <div className="flex items-center text-gray-600">
+                                        <div className="flex items-center text-text-secondary">
                                             <span className="mr-3 text-2xl">🛡️</span>
                                             <div>
-                                                <div className="font-bold text-gray-800">Warranty/Interval</div>
+                                                <div className="font-bold text-clean-white">Warranty/Interval</div>
                                                 <div className="text-sm">{activeService.interval}</div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="space-y-4">
-                                        <h3 className="text-lg font-bold text-gray-800 uppercase tracking-wide border-b border-gray-100 pb-2">Service Specifications</h3>
+                                        <h3 className="text-lg font-bold text-clean-white uppercase tracking-wide border-b border-white/10 pb-2">Service Specifications</h3>
                                         <ul className="space-y-2">
                                             {activeService.features.map((feature, idx) => (
-                                                <li key={idx} className="flex items-start text-sm text-gray-600">
-                                                    <span className="text-green-500 mr-2 font-bold">✓</span>
+                                                <li key={idx} className="flex items-start text-sm text-text-secondary">
+                                                    <span className="text-soft-highlight mr-2 font-bold">✓</span>
                                                     {feature}
                                                 </li>
                                             ))}
@@ -187,8 +187,8 @@ const CarClutchWork = () => {
                                     </div>
                                 </div>
 
-                                <div className="mt-auto pt-8 border-t border-gray-100 flex justify-end">
-                                    <button className="bg-primary-red text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-red-700 transition-colors shadow-lg transform active:scale-95 w-full md:w-auto text-center">
+                                <div className="mt-auto pt-8 border-t border-white/10 flex justify-end">
+                                    <button className="bg-soft-highlight text-primary-bg px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white transition-colors shadow-lg transform active:scale-95 w-full md:w-auto text-center">
                                         Select Your Car
                                     </button>
                                 </div>

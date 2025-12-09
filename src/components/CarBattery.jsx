@@ -43,7 +43,7 @@ const CarBattery = () => {
     const [activeService, setActiveService] = useState('replacement');
 
     return (
-        <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4 md:p-10 font-sans overflow-hidden relative">
+        <div className="min-h-screen bg-primary-bg flex items-center justify-center p-4 md:p-10 font-sans overflow-hidden relative">
 
             {/* Background Atmosphere */}
             <div className="absolute inset-0 z-0">
@@ -67,9 +67,9 @@ const CarBattery = () => {
                         {/* Main Body */}
                         <div className="w-full h-full bg-gradient-to-br from-black to-gray-800 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t border-gray-700 relative overflow-hidden flex flex-col">
                             {/* Branding Strip */}
-                            <div className="h-24 bg-primary-red flex items-center justify-between px-6 shadow-md relative z-10">
-                                <div className="font-black text-white text-3xl italic tracking-tighter">POWER<span className="text-black">CORE</span></div>
-                                <div className="text-xs font-bold text-white/80 border border-white/50 px-2 py-1 rounded">12V 60Ah</div>
+                            <div className="h-24 bg-soft-highlight flex items-center justify-between px-6 shadow-md relative z-10">
+                                <div className="font-black text-primary-bg text-3xl italic tracking-tighter">POWER<span className="text-clean-white">CORE</span></div>
+                                <div className="text-xs font-bold text-primary-bg/80 border border-primary-bg/50 px-2 py-1 rounded">12V 60Ah</div>
                             </div>
 
                             {/* Inner Selection Area */}
@@ -89,7 +89,7 @@ const CarBattery = () => {
                                             `}
                                         >
                                             <div className="flex justify-between items-center mb-1">
-                                                <h3 className={`font-bold text-lg ${activeService === service.id ? 'text-blue-400' : 'text-gray-300'}`}>{service.title}</h3>
+                                                <h3 className={`font-bold text-lg ${activeService === service.id ? 'text-soft-highlight' : 'text-text-secondary'}`}>{service.title}</h3>
                                                 {activeService === service.id && <span className="w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_#3b82f6]"></span>}
                                             </div>
                                             <div className="text-xs text-gray-500 font-mono">{service.time}</div>
@@ -129,7 +129,7 @@ const CarBattery = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl font-black text-white mb-2 uppercase tracking-tight font-heading">
+                            <h2 className="text-4xl md:text-5xl font-black text-clean-white mb-2 uppercase tracking-tight font-heading">
                                 {service.title}
                             </h2>
                             <div className="h-1 w-24 bg-blue-500 mb-8 shadow-[0_0_15px_#3b82f6]"></div>
@@ -146,17 +146,17 @@ const CarBattery = () => {
                                     </div>
                                 </div>
 
-                                <h3 className="text-gray-300 font-bold mb-4 uppercase text-sm border-b border-gray-700 pb-2">Technical Specifications</h3>
+                                <h3 className="text-text-secondary font-bold mb-4 uppercase text-sm border-b border-white/10 pb-2">Technical Specifications</h3>
                                 <ul className="space-y-3 mb-8">
                                     {service.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center text-gray-300">
+                                        <li key={idx} className="flex items-center text-text-secondary">
                                             <span className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs mr-3 border border-blue-500/50">⚡</span>
                                             {feature}
                                         </li>
                                     ))}
                                 </ul>
 
-                                <button className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-black uppercase tracking-widest rounded-xl hover:from-blue-500 hover:to-blue-600 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+                                <button className="w-full py-4 bg-gradient-to-r from-soft-highlight to-neutral-accent text-primary-bg font-black uppercase tracking-widest rounded-xl hover:from-white hover:to-gray-200 transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)]">
                                     Book {service.title.split(' ')[1]}
                                 </button>
                             </div>

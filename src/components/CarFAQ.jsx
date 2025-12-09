@@ -38,7 +38,7 @@ const CarFAQ = () => {
 
     return (
         <div className="w-full mb-20 relative">
-            <h2 className="text-4xl font-heading text-primary-yellow uppercase mb-6 text-center z-20 relative">
+            <h2 className="text-4xl font-heading text-clean-white uppercase mb-6 text-center z-20 relative">
                 FAQs
             </h2>
 
@@ -60,7 +60,7 @@ const CarFAQ = () => {
                         onMouseLeave={() => setActiveZone(null)}
                     >
                         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 rounded-full blur-xl transition-opacity duration-300"></div>
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-yellow text-primary-navy font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-clean-white text-primary-bg font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
                             Engine & Battery
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const CarFAQ = () => {
                         onMouseLeave={() => setActiveZone(null)}
                     >
                         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 rounded-full blur-xl transition-opacity duration-300"></div>
-                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary-yellow text-primary-navy font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
+                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-clean-white text-primary-bg font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
                             Emergency & Care
                         </div>
                     </div>
@@ -84,7 +84,7 @@ const CarFAQ = () => {
                         onMouseLeave={() => setActiveZone(null)}
                     >
                         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 rounded-full blur-xl transition-opacity duration-300"></div>
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-yellow text-primary-navy font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-clean-white text-primary-bg font-bold text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 animate-bounce">
                             Diagnostics
                         </div>
                     </div>
@@ -93,34 +93,34 @@ const CarFAQ = () => {
                 {/* Display Panels */}
                 <div className="absolute inset-0 pointer-events-none z-30">
                     {/* Front Panel (Left) */}
-                    <div className={`absolute top-10 left-0 md:-left-10 w-64 md:w-80 bg-white/95 backdrop-blur-md p-6 rounded-2xl rounded-tr-none shadow-2xl border-l-4 border-primary-red transform transition-all duration-500 origin-bottom-right
+                    <div className={`absolute top-10 left-0 md:-left-10 w-64 md:w-80 bg-secondary-bg/95 backdrop-blur-md p-6 rounded-2xl rounded-tr-none shadow-2xl border-l-4 border-soft-highlight transform transition-all duration-500 origin-bottom-right
                         ${activeZone === 'front' ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-10'}`}>
                         {faqs.front.map((f, i) => (
                             <div key={i} className="mb-4 last:mb-0">
-                                <h4 className="font-bold text-primary-navy text-sm mb-1">? {f.q}</h4>
-                                <p className="text-gray-600 text-xs leading-relaxed">{f.a}</p>
+                                <h4 className="font-bold text-clean-white text-sm mb-1">? {f.q}</h4>
+                                <p className="text-text-secondary text-xs leading-relaxed">{f.a}</p>
                             </div>
                         ))}
                     </div>
 
                     {/* Cabin Panel (Top) */}
-                    <div className={`absolute -top-20 left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-t-4 border-primary-yellow transform transition-all duration-500 origin-bottom
+                    <div className={`absolute -top-20 left-1/2 -translate-x-1/2 w-80 bg-secondary-bg/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-t-4 border-clean-white transform transition-all duration-500 origin-bottom
                         ${activeZone === 'cabin' ? 'opacity-100 scale-100 -translate-y-4' : 'opacity-0 scale-90 translate-y-10'}`}>
                         {faqs.cabin.map((f, i) => (
                             <div key={i} className="mb-4 last:mb-0">
-                                <h4 className="font-bold text-primary-navy text-sm mb-1">? {f.q}</h4>
-                                <p className="text-gray-600 text-xs leading-relaxed">{f.a}</p>
+                                <h4 className="font-bold text-clean-white text-sm mb-1">? {f.q}</h4>
+                                <p className="text-text-secondary text-xs leading-relaxed">{f.a}</p>
                             </div>
                         ))}
                     </div>
 
                     {/* Rear Panel (Right) */}
-                    <div className={`absolute top-10 right-0 md:-right-10 w-64 md:w-80 bg-white/95 backdrop-blur-md p-6 rounded-2xl rounded-tl-none shadow-2xl border-r-4 border-blue-500 transform transition-all duration-500 origin-bottom-left
+                    <div className={`absolute top-10 right-0 md:-right-10 w-64 md:w-80 bg-secondary-bg/95 backdrop-blur-md p-6 rounded-2xl rounded-tl-none shadow-2xl border-r-4 border-neutral-accent transform transition-all duration-500 origin-bottom-left
                         ${activeZone === 'rear' ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-10'}`}>
                         {faqs.rear.map((f, i) => (
                             <div key={i} className="mb-4 last:mb-0">
-                                <h4 className="font-bold text-primary-navy text-sm mb-1">? {f.q}</h4>
-                                <p className="text-gray-600 text-xs leading-relaxed">{f.a}</p>
+                                <h4 className="font-bold text-clean-white text-sm mb-1">? {f.q}</h4>
+                                <p className="text-text-secondary text-xs leading-relaxed">{f.a}</p>
                             </div>
                         ))}
                     </div>
