@@ -102,12 +102,12 @@ const Navbar = () => {
 
                 {/* Mobile Menu Overlay */}
                 <div className={`fixed inset-0 bg-primary-bg z-40 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden overflow-y-auto`}>
-                    <div className="flex flex-col items-center pt-28 pb-10 space-y-6 px-4">
+                    <div className="flex flex-col items-start pt-28 pb-10 space-y-6 px-10">
                         <Link to="/" onClick={toggleMenu} className="text-clean-white font-bold text-xl uppercase hover:text-soft-highlight">Home</Link>
 
-                        <div className="w-full text-center">
-                            <p className="text-soft-highlight font-bold text-lg uppercase mb-4 border-b border-white/10 pb-2">Services</p>
-                            <div className="grid grid-cols-1 gap-4">
+                        <div className="w-full text-left">
+                            <p className="text-soft-highlight font-bold text-lg uppercase mb-4 border-b border-white/10 pb-2 inline-block">Services</p>
+                            <div className="grid grid-cols-1 gap-4 pl-4 border-l border-white/10">
                                 {[
                                     { name: "Schedule Maintenance", path: "/services/regular" },
                                     { name: "AC Service & Repair", path: "/services/ac-repair" },
