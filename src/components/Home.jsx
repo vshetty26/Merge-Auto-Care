@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from './Hero';
 import InfoSection from './InfoSection';
+import Services from './Services';
+import Gallery from './Gallery';
 import Membership from './Membership';
 import Testimonials from './JoinTeam';
 
@@ -9,6 +11,8 @@ const Home = () => {
         <>
             <Hero />
             <InfoSection />
+            <Services />
+            <Gallery />
             <Membership />
             <Testimonials />
         </>

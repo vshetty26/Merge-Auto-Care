@@ -32,12 +32,12 @@ const InfoSection = () => {
 
             <div className="relative z-10 container mx-auto px-4 text-center">
                 <div className="mb-20">
-                    <p className="text-xl font-bold text-soft-highlight mb-2">About Us</p>
+                    <p className="text-xl font-bold text-soft-highlight mb-2">About Merge Auto Care</p>
                     <h2 className="text-5xl md:text-6xl font-heading text-primary-bg uppercase mb-4">
                         Why Choose Us
                     </h2>
                     <p className="max-w-2xl mx-auto text-gray-600 font-bold">
-                        Auto Car Repair (Powered by Autogine Services) is a leading network of multi-brand car service workshops in Delhi NCR.
+                        Merge Auto Care is a luxury and premium car workshop. We focus on maintenance, general repairs, diagnostics, pre-inspection checkups, brake and alternator replacement. We use genuine OEM parts and offer transparent service with photos and updates to clients.
                     </p>
                     <p className="mt-4 text-sm text-gray-400 uppercase tracking-widest animate-bounce">
                         Hover over the car to discover

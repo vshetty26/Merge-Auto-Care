@@ -48,7 +48,7 @@ const CarFAQ = () => {
                 <div className="relative z-10 w-full transition-transform duration-500 hover:scale-105 flex justify-center">
                     <img
                         src="/mascot.png"
-                        alt="ACR Mascot"
+                        alt="Merge Auto Care Mascot"
                         className="w-auto h-full max-h-[600px] object-contain drop-shadow-2xl filter brightness-110"
                     />
 

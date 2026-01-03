@@ -76,9 +76,8 @@ const Footer = () => {
                             <input type="email" placeholder="Enter Your Email" className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
                             <select className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none">
                                 <option>Select Location</option>
-                                <option>Gurugram</option>
-                                <option>Delhi</option>
-                                <option>Noida</option>
+                                <option>Indore</option>
+                                <option>Dewas Naka</option>
                             </select>
                             <input type="tel" placeholder="Enter Your Phone Number" className="w-full p-4 bg-primary-bg text-clean-white border border-white/10 rounded focus:border-soft-highlight outline-none" />
                             <div className="flex items-center space-x-2">
@@ -87,7 +86,7 @@ const Footer = () => {
                             </div>
                             <label className="flex items-start space-x-2 text-sm text-gray-400">
                                 <input type="checkbox" className="mt-1 accent-soft-highlight" />
-                                <span>I agree to receive calls, e-mail, WhatsApp messages, and SMS from ACR.</span>
+                                <span>I agree to receive calls, e-mail, WhatsApp messages, and SMS from Merge Auto Care.</span>
                             </label>
                             <button className="bg-clean-white text-primary-bg font-bold py-4 px-8 rounded w-full hover:bg-gray-200 transition uppercase">
                                 Submit
@@ -101,15 +100,15 @@ const Footer = () => {
                         <div className="space-y-6 text-lg text-text-secondary">
                             <p>
                                 <strong className="block text-clean-white">Adddress</strong>
-                                Unit-1 Plot No 29 & 30, Sector 34, Gurugram, 122001
+                                Ruchir Complex Godown No. 18, 46/1 Lasudia Mori, Dewas Naka, Indore (M.P) - 452010
                             </p>
                             <p>
                                 <strong className="block text-clean-white">Phone</strong>
-                                9810446692 / 9870400861
+                                +91 75660 00333 / +91 90092 14400
                             </p>
                             <p>
                                 <strong className="block text-clean-white">Email</strong>
-                                support@autocarrepair.in
+                                support@mergeautocare.com
                             </p>
                             <div className="pt-6">
                                 <strong className="block text-clean-white mb-4">Follow Us</strong>
@@ -158,12 +157,12 @@ const Footer = () => {
                         </ul>
                         <h4 className="text-white font-bold uppercase mt-6 mb-4">Locations</h4>
                         <ul className="space-y-2">
-                            <li>Gurgaon, Delhi, Noida, Okhla</li>
+                            <li>Indore, Dewas Naka, Lasudia Mori</li>
                         </ul>
                     </div>
                     <div>
-                        <img src="/acr_logo.png" alt="ACR" className="h-20 mb-4 bg-primary-bg p-2 rounded brightness-0 invert" />
-                        <p className="mb-4">Auto Car Repair (Powered by Autogine Services) is a leading network of multi-brand car service workshops.</p>
+                        <img src="/mac_logo.png" alt="Merge Auto Care" className="h-20 mb-4 bg-primary-bg p-2 rounded" />
+                        <p className="mb-4">Merge Auto Care is a leading luxury and premium car workshop.</p>
                         <p>© 2025 by Autoginie Services Private Limited.</p>
                     </div>
                 </div>

@@ -7,11 +7,11 @@ const Navbar = () => {
             {/* Top Yellow Bar */}
             <div className="bg-secondary-bg w-full py-2 px-4 text-center border-b border-white/10 overflow-hidden relative z-50">
                 <div className="text-clean-white font-bold text-xs md:text-sm tracking-wide flex justify-center space-x-4 uppercase animate-marquee md:animate-none whitespace-nowrap">
-                    <span>📞 Call For Book: 9810446692</span>
+                    <span>📞 Call For Book: +91 75660 00333 / +91 90092 14400</span>
                     <span className="hidden md:inline">|</span>
-                    <span>✉️ support@autocarrepair.in</span>
+                    <span>✉️ support@mergeautocare.com</span>
                     <span className="hidden md:inline">|</span>
-                    <span>📍 Unit-1 Plot No 29 & 30, Sector 34, Gurugram</span>
+                    <span>📍 Ruchir Complex, Lasudia Mori, Indore</span>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <div className="flex justify-between items-center h-24">
                         {/* Logo Section */}
                         <div className="flex-shrink-0 flex items-center">
-                            <img src="/acr_logo.png" alt="ACR Logo" className="h-16 md:h-20 object-contain brightness-0 invert" />
+                            <img src="/mac_logo.png" alt="Merge Auto Care Logo" className="h-16 md:h-20 object-contain" />
                         </div>
 
                         {/* Desktop Menu */}
@@ -37,18 +37,18 @@ const Navbar = () => {
                                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-64 bg-secondary-bg border border-white/10 rounded-xl overflow-hidden hidden group-hover:block z-50 text-center shadow-2xl pt-2 pb-2">
                                             <div className="flex flex-col">
                                                 {[
-                                                    { name: "Regular Car Service", path: "/services/regular" },
+                                                    { name: "Schedule Maintenance & General Repair", path: "/services/regular" },
                                                     { name: "Car AC Service & Repair", path: "/services/ac-repair" },
-                                                    { name: "Car Brake & Wheel Maintenance", path: "/services/brakes-wheels" },
+                                                    { name: "Brake Pads & Disc Replacement", path: "/services/brakes-wheels" },
                                                     { name: "Car Denting & Painting", path: "/services/denting-painting" },
                                                     { name: "Car Care & Detailing", path: "/services/detailing" },
                                                     { name: "Car Lights and Glass Work", path: "/services/lights-glass" },
                                                     { name: "Car Clutch Work", path: "/services/clutch" },
                                                     { name: "Car Suspension Work", path: "/services/suspension" },
-                                                    { name: "Car Repairs & Inspection", path: "/services/repairs-inspection" },
-                                                    { name: "Car Insurance Claim", path: "/services/insurance-claim" },
+                                                    { name: "Pre-Inspection Checkup", path: "/services/repairs-inspection" },
+                                                    { name: "Cashless Insurance Assistance", path: "/services/insurance-claim" },
                                                     { name: "Car Emergency Services", path: "/services/emergency" },
-                                                    { name: "Car Battery", path: "/services/battery" }
+                                                    { name: "Alternator & Battery", path: "/services/battery" }
                                                 ].map((service, index) => (
                                                     <Link key={index} to={service.path} className="px-4 py-2 text-white font-heading tracking-wider hover:text-primary-yellow text-sm font-normal uppercase transition-colors block">
                                                         {service.name}

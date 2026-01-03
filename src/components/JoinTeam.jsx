@@ -6,7 +6,7 @@ const Testimonials = () => {
             <div className="max-w-7xl mx-auto text-center mb-16">
                 <p className="text-xl text-soft-highlight font-bold mb-2">What our clients say</p>
                 <h2 className="text-5xl md:text-7xl font-heading text-clean-white uppercase">
-                    Delhi NCR Drivers Trust Us
+                    Trusted by Luxury Car Owners
                 </h2>
             </div>
 
@@ -22,7 +22,7 @@ const Testimonials = () => {
                         <div key={i} className="flex-none w-80 md:w-96 bg-secondary-bg rounded-xl p-8 shadow-md relative border-l-4 border-soft-highlight transform transition-transform hover:scale-105 duration-300">
                             <div className="text-clean-white font-bold text-lg mb-4">"Excellent Service!"</div>
                             <p className="text-text-secondary italic mb-6">
-                                "Great experience with ACR. They handled my car with care and the detailing was top notch. Highly recommended for anyone in Gurgaon."
+                                "Great experience with Merge Auto Care. They handled my car with care and the detailing was top notch. Highly recommended for anyone in Gurgaon."
                             </p>
                             <div className="flex items-center">
                                 <div className="w-10 h-10 bg-primary-bg rounded-full flex items-center justify-center text-clean-white font-bold mr-3 border border-white/10">
@@ -40,7 +40,7 @@ const Testimonials = () => {
                         <div key={`dup-${i}`} className="flex-none w-80 md:w-96 bg-secondary-bg rounded-xl p-8 shadow-md relative border-l-4 border-soft-highlight transform transition-transform hover:scale-105 duration-300">
                             <div className="text-clean-white font-bold text-lg mb-4">"Excellent Service!"</div>
                             <p className="text-text-secondary italic mb-6">
-                                "Great experience with ACR. They handled my car with care and the detailing was top notch. Highly recommended for anyone in Gurgaon."
+                                "Great experience with Merge Auto Care. They handled my car with care and the detailing was top notch. Highly recommended for anyone in Gurgaon."
                             </p>
                             <div className="flex items-center">
                                 <div className="w-10 h-10 bg-primary-bg rounded-full flex items-center justify-center text-clean-white font-bold mr-3 border border-white/10">
