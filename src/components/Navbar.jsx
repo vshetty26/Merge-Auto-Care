@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
     return (
         <div className="w-full flex flex-col font-condensed sticky top-0 z-50">
             {/* Top Yellow Bar */}
@@ -22,6 +28,22 @@ const Navbar = () => {
                         {/* Logo Section */}
                         <div className="flex-shrink-0 flex items-center">
                             <img src="/mac_logo.png" alt="Merge Auto Care Logo" className="h-16 md:h-20 object-contain" />
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <div className="flex md:hidden z-50">
+                            <button
+                                onClick={toggleMenu}
+                                className="text-clean-white focus:outline-none"
+                            >
+                                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    {isMobileMenuOpen ? (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    ) : (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    )}
+                                </svg>
+                            </button>
                         </div>
 
                         {/* Desktop Menu */}
@@ -75,6 +97,45 @@ const Navbar = () => {
                                 <img src="/mascot.png" alt="Mascot" className="w-full h-full object-cover" />
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Mobile Menu Overlay */}
+                <div className={`fixed inset-0 bg-primary-bg z-40 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden overflow-y-auto`}>
+                    <div className="flex flex-col items-center pt-28 pb-10 space-y-6 px-4">
+                        <Link to="/" onClick={toggleMenu} className="text-clean-white font-bold text-xl uppercase hover:text-soft-highlight">Home</Link>
+
+                        <div className="w-full text-center">
+                            <p className="text-soft-highlight font-bold text-lg uppercase mb-4 border-b border-white/10 pb-2">Services</p>
+                            <div className="grid grid-cols-1 gap-4">
+                                {[
+                                    { name: "Schedule Maintenance", path: "/services/regular" },
+                                    { name: "AC Service & Repair", path: "/services/ac-repair" },
+                                    { name: "Brake & Wheel", path: "/services/brakes-wheels" },
+                                    { name: "Denting & Painting", path: "/services/denting-painting" },
+                                    { name: "Care & Detailing", path: "/services/detailing" },
+                                    { name: "Lights & Glass", path: "/services/lights-glass" },
+                                    { name: "Clutch Work", path: "/services/clutch" },
+                                    { name: "Suspension Work", path: "/services/suspension" },
+                                    { name: "Inspection", path: "/services/repairs-inspection" },
+                                    { name: "Insurance Claim", path: "/services/insurance-claim" },
+                                    { name: "Emergency Services", path: "/services/emergency" },
+                                    { name: "Alternator & Battery", path: "/services/battery" }
+                                ].map((service, index) => (
+                                    <Link key={index} to={service.path} onClick={toggleMenu} className="text-gray-300 hover:text-white text-sm uppercase">
+                                        {service.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <a href="#" className="text-clean-white font-bold text-xl uppercase hover:text-soft-highlight">Service Center</a>
+                        <a href="#" className="text-clean-white font-bold text-xl uppercase hover:text-soft-highlight">Offers</a>
+                        <a href="#" className="text-clean-white font-bold text-xl uppercase hover:text-soft-highlight">Detailing</a>
+
+                        <a href="#" className="bg-soft-highlight text-primary-bg px-8 py-3 rounded-full font-bold uppercase hover:bg-white transition-colors mt-4">
+                            Get Appointment
+                        </a>
                     </div>
                 </div>
             </nav>
